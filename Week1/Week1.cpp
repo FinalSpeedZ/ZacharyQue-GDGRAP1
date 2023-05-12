@@ -1,5 +1,13 @@
 #include <GLFW/glfw3.h>
 
+#include "vector"
+
+#include "iostream"
+
+#define PI 3.1416
+
+#define SIDES 5
+
 int main(void)
 {
     GLFWwindow* window;
@@ -25,21 +33,22 @@ int main(void)
         /* Render here */
         glClear(GL_COLOR_BUFFER_BIT);
 
-        ///* Make a triangle */
-        ///*
-        //    Center of window is 0, 0
-        //    Left is -1, Right is 1
-        //    Top is 1, Bottom -1
-        //*/
-        //glBegin(GL_TRIANGLES);
-        //glVertex2f(0.f, 1.f);
-        //glVertex2f(-1.f, -1.f);
-        //glVertex2f(1.f, -1.f);
-        //glEnd();
+        // Distance from center
+        float fDistance = 0.5f;
 
-        /* Make a pentagon */
+        // inner angle
+        float fInnerAngle = 360 / SIDES;
+
         glBegin(GL_POLYGON);
-        
+
+        for (int i = 0; i < SIDES; i++) {
+            // x in polar is r * cos
+            // y in polar is r * sin
+            glVertex2f(fDistance * cos(fInnerAngle * i * PI / 180), 
+                       fDistance * sin(fInnerAngle * i * PI / 180));
+        }
+
+        glEnd();
 
         /* Swap front and back buffers */
         glfwSwapBuffers(window);
