@@ -44,8 +44,8 @@ int main(void)
         for (int i = 0; i < SIDES; i++) {
             // x in polar is r * cos
             // y in polar is r * sin
-            glVertex2f(fDistance * cos(fInnerAngle * i * PI / 180), 
-                       fDistance * sin(fInnerAngle * i * PI / 180));
+            glVertex2f((GLfloat) (fDistance * cos(fInnerAngle * i * PI / 180)),
+                       (GLfloat) (fDistance * sin(fInnerAngle * i * PI / 180)));
         }
 
         glEnd();
