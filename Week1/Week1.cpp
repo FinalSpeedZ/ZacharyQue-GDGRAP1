@@ -1,7 +1,5 @@
 #include <GLFW/glfw3.h>
 
-#include "vector"
-
 #include "iostream"
 
 #define PI 3.1416
