@@ -6,7 +6,7 @@
 
 #define SIDES 5
 
-int main(void)
+int main()
 {
     GLFWwindow* window;
 
